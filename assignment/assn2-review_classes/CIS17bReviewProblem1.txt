@@ -1,0 +1,85 @@
+Review C++ classes and inheritance.  Chapters 13/14/15 in the Gaddis textbook and refer to slides.
+
+1)  Create classes that will solve the attached problem in C++, i.e. the specification, driver code and sample I/O have been supplied.   You have to implement the class, utilize the input to get the output.  See  CIS17bReviewProblem1.txt
+
+2)  Create a class in C++, Javascript, and PHP for the code presented in Wednesdays class.  i.e. change JavascriptSavingsFunction.js, PHPSavingsFunction.php, and SavingsFunction.h to a class instead of separate function library.  Make pv, intr, and nYears the private properties of the class that are initialized by a constructor.  Modify the existing code to test your classes just like I created and tested the function libraries included in the original code.  Note:  the C++ code is in the folder CPPEquivalent.
+
+https://github.com/ml1150258/LehrMark_CIS_CSC_17b_Fall2017/tree/master/lab/Compare_Get__Functions_Arrays
+
+Submit the projects here as well as copy yourself on an email with attachments to mark.lehr@rcc.edu with subject:  Lastname, Firstname - Review  I - 47340 or 48947
+
+CIS17bReviewProblem1.txt
+
+Class Specifications
+
+class Prob3Table
+{
+	protected:
+		int rows;                                 //Number of rows in the table
+		int cols;                                 //Number of cols in the table
+		int *rowSum;                              //RowSum array
+		int *colSum;                              //ColSum array
+		int *table;                               //Table array
+		int grandTotal;                           //Grand total
+		void calcTable(void);                     //Calculate all the sums
+	public:
+		Prob3Table(char *,int,int);               //Constructor then Destructor
+		~Prob3Table(){delete [] table;delete [] rowSum;delete [] colSum;};
+		const int *getTable(void){return table;};
+		const int *getRowSum(void){return rowSum;};
+		const int *getColSum(void){return colSum;};
+		int getGrandTotal(void){return grandTotal;};
+};
+
+class Prob3TableInherited:public Prob3Table
+{
+	protected:
+		int *augTable;                                  //Augmented Table with sums
+	public:
+		Prob3TableInherited(char *,int,int);          //Constructor
+		~Prob3TableInherited(){delete [] augTable;};  //Destructor
+		const int *getAugTable(void){return augTable;}; 
+};
+
+
+
+Driver code
+	cout<<"Entering problem number 3"<<endl;
+	int rows=5;
+	int cols=6;
+	Prob3TableInherited tab("Problem3.txt",rows,cols);
+	const int *naugT=tab.getTable();
+	for(int i=0;i<rows;i++)
+	{
+		for(int j=0;j<cols;j++)
+		{
+			cout<<naugT[i*cols+j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	const int *augT=tab.getAugTable();
+	for(int i=0;i<=rows;i++)
+	{
+		for(int j=0;j<=cols;j++)
+		{
+			cout<<augT[i*(cols+1)+j]<<" ";
+		}
+		cout<<endl;
+	}
+
+
+Example Input Table
+   100   101   102   103   104   105
+   106   107   108   109   110   111
+   112   113   114   115   116   117
+   118   119   120   121   122   123
+   124   125   126   127   128   128
+Example Output Table with rows summed,
+columns summed and the grand total printed.
+   100   101   102   103   104   105   615
+   106   107   108   109   110   111   651
+   112   113   114   115   116   117   687
+   118   119   120   121   122   123   723
+   124   125   126   127   128   128   758
+   560   565   570   575   580   584  3434
