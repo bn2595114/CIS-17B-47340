@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=savingsfunctionsincpp
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/savingsfunctionsincpp
+CND_ARTIFACT_NAME_Debug=classes-savings-cpp
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/classes-savings-cpp
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=savingsfunctionsincpp.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/savingsfunctionsincpp.tar
+CND_PACKAGE_NAME_Debug=classes-savings-cpp.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/classes-savings-cpp.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows

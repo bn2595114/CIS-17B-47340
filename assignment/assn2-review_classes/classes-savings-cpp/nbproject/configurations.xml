@@ -4,8 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Prob3Table.h</itemPath>
-      <itemPath>Prob3TableInherited.h</itemPath>
+      <itemPath>SavingsFunctions.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,8 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Prob3Table.cpp</itemPath>
-      <itemPath>Prob3TableInherited.cpp</itemPath>
+      <itemPath>SavingsFunctions.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -39,16 +37,8 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
-        <ccTool>
-          <standard>8</standard>
-        </ccTool>
         <linkerTool>
           <linkerDynSerch>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
@@ -56,13 +46,9 @@
           </linkerDynSerch>
         </linkerTool>
       </compileType>
-      <item path="Prob3Table.cpp" ex="false" tool="1" flavor2="0">
+      <item path="SavingsFunctions.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Prob3Table.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Prob3TableInherited.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Prob3TableInherited.h" ex="false" tool="3" flavor2="0">
+      <item path="SavingsFunctions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -79,7 +65,6 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
-          <standard>8</standard>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -93,21 +78,12 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
             <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
-            <pElem>.</pElem>
           </linkerDynSerch>
         </linkerTool>
       </compileType>
-      <item path="Prob3Table.cpp" ex="false" tool="1" flavor2="0">
+      <item path="SavingsFunctions.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Prob3Table.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Prob3TableInherited.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Prob3TableInherited.h" ex="false" tool="3" flavor2="0">
+      <item path="SavingsFunctions.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
