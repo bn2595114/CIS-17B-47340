@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-MacOSX
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
+CND_PLATFORM_Debug=Cygwin-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
 CND_ARTIFACT_NAME_Debug=savingsfunctionsincpp
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/savingsfunctionsincpp
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/savingsfunctionsincpp
+CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
 CND_PACKAGE_NAME_Debug=savingsfunctionsincpp.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/savingsfunctionsincpp.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/savingsfunctionsincpp.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
