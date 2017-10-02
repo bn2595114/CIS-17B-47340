@@ -24,13 +24,20 @@
             var account=new Savings(pv, int, nYears);
             //Perform Calculation / Call the function
             var fv1=account.save1();
+//            console.log(fv1);
             var fv2=account.save2();
+//            console.log(fv2);
             var fv3=account.save3();
-            var fv4=account.save4(pv, int, nYears);
+//            console.log(fv3);
+            var fv4=account.save4();
+//            console.log(fv4);
             var fv5=account.save5();
-            var fv6={save:0};
-            save6(fv6);
+//            console.log(fv5);
+            var fvSave = 0.0;
+            var fv6=account.save6(fvSave);
+//            console.log(fv6);
             var fv7=account.save7();
+//            console.log(fv7);
 
             //Display the results
             document.write("<p>Present Value   = $"+pv+"</p>");
@@ -41,8 +48,9 @@
             document.write("<p>Future Value    = $"+fv3.toFixed(2)+"</p>");
             document.write("<p>Future Value    = $"+fv4.toFixed(2)+"</p>");
             document.write("<p>Future Value    = $"+fv5.toFixed(2)+"</p>");
-            document.write("<p>Future Value    = $"+fv6.save.toFixed(2)+"</p>");
+            document.write("<p>Future Value    = $"+fv6.toFixed(2)+"</p>");
             account.display(fv7);	
         </script>
+        <h1>End of World</h1>
     </body>
 </html>

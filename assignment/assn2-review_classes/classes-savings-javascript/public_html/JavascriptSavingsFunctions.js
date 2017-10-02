@@ -18,6 +18,18 @@ function Savings (pv, intr, n) {
     this.n = n;  //n = number of years
 }
 
+Savings.prototype.getpv = function() {
+    return this.pv;
+};
+
+Savings.prototype.getintr = function() {
+    return this.intr;
+};
+
+Savings.prototype.gettime = function() {
+    return this.n;
+};
+
 //Savings with a for-loop
 Savings.prototype.save1 = function() {
     var pval = this.pv;
@@ -38,14 +50,19 @@ Savings.prototype.save3=function(){
 };
 
 //Savings with recursion
-Savings.prototype.save4=function(pv=this.pv, intr=this.intr, n=this.n){
-    if(n<=0)return pv;
-    return save4(pv,intr,n-1)*(1+intr);
+Savings.prototype.save4=function(){
+    if(this.n<=0)return pv;
+    return this.save4rc(this.pv,this.intr,this.n-1)*(1+this.intr);
+};
+
+Savings.prototype.save4rc=function(pval, ival, nval){
+    if(nval<=0)return pval;
+    return this.save4rc(pval,ival,nval-1)*(1+ival);
 };
 
 //Savings with a defaulted parameter
 Savings.prototype.save5=function(){
-    var pval=this.pval;
+    var pval=this.pv;
     for(var year=1;year<=this.n;year++){
         pval*=(1+this.intr);
     }
@@ -54,7 +71,7 @@ Savings.prototype.save5=function(){
 
 //Savings with a reference object
 Savings.prototype.save6=function(fv){
-    fv.save=this.pv*Math.exp(this.n*Math.log(1+this.intr));
+    return fv=this.pv*Math.exp(this.n*Math.log(1+this.intr));
 };
 
 //Savings with an array

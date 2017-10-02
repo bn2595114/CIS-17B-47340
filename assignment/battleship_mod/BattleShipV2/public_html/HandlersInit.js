@@ -21,7 +21,7 @@ function handleKeyPress(e) {
 
     // in IE9 and earlier, the event object doesn't get passed
     // to the event handler correctly, so we use window.event instead.
-    e = e || window.event;
+    // e = e || window.event;
 
     if (e.keyCode === 13) {
             fireButton.click();
