@@ -1,9 +1,9 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Created on : Sep 18, 2017, 6:28:09 PM
+    Author     : Head First Javascript Example Project
  */
 
+/* global view */
 
 var model = {
     boardSize: 7,
@@ -101,98 +101,3 @@ var model = {
     }
 	
 }; 
-
-var view = {
-    displayMessage: function(msg) {
-        var messageArea = document.getElementById("messageArea");
-        messageArea.innerHTML = msg;
-    },
-
-    displayHit: function(location) {
-        var cell = document.getElementById(location);
-        cell.setAttribute("class", "hit");
-    },
-
-    displayMiss: function(location) {
-        var cell = document.getElementById(location);
-        cell.setAttribute("class", "miss");
-    }
-
-}; 
-
-var controller = {
-    guesses: 0,
-
-    processGuess: function(guess) {
-        var location = this.parseGuess(guess);
-        if (location) {
-            this.guesses++;
-            var hit = model.fire(location);
-            if (hit && model.shipsSunk === model.numShips) {
-                view.displayMessage("You sank all my battleships, in " 
-                        + this.guesses + " guesses");
-            }
-        }
-    },
-
-    parseGuess:  function(guess) {
-        var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
-
-        if (guess === null || guess.length !== 2) {
-            alert("Oops, please enter a letter and a number on the board.");
-        } else {
-            var firstChar = guess.charAt(0);
-            var row = alphabet.indexOf(firstChar);
-            var column = guess.charAt(1);
-
-            if (isNaN(row) || isNaN(column)) {
-                alert("Oops, that isn't on the board.");
-            } else if (row < 0 || row >= model.boardSize ||
-                   column < 0 || column >= model.boardSize) {
-                alert("Oops, that's off the board!");
-            } else {
-                return row + column;
-            }
-        }
-        return null;
-    }
-};
-
-function handleFireButton() {
-    var guessInput = document.getElementById("guessInput");
-    var guess = guessInput.value.toUpperCase();
-
-    controller.processGuess(guess);
-
-    guessInput.value = "";
-}
-
-function handleKeyPress(e) {
-    var fireButton = document.getElementById("fireButton");
-
-    // in IE9 and earlier, the event object doesn't get passed
-    // to the event handler correctly, so we use window.event instead.
-    e = e || window.event;
-
-    if (e.keyCode === 13) {
-            fireButton.click();
-            return false;
-    }
-}
-
-// init - called when the page has completed loading
-
-window.onload = init;
-
-function init() {
-    // Fire! button onclick handler
-    var fireButton = document.getElementById("fireButton");
-    fireButton.onclick = handleFireButton;
-
-    // handle "return" key press
-    var guessInput = document.getElementById("guessInput");
-    guessInput.onkeypress = handleKeyPress;
-
-    // place the ships on the game board
-    model.generateShipLocations();
-}
