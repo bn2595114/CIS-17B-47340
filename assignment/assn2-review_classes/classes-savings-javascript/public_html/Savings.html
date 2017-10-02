@@ -9,27 +9,28 @@
     <head>
         <title>Utilize the Savings Javascript Functions</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Inserting Libraries -->
         <script type="text/javascript" src="./JavascriptSavingsFunctions.js">
         </script>
     </head>
     <body>
+        <h1>Hello World!</h1>
          <script type="text/javascript">
             //Declare variables
             var pv=100;  //Present Value in $'s
             var int=0.06;//Interest Rate %
             var nYears=12;//Number of compounding periods (yrs)
-
+            //
+            var account=new Savings(pv, int, nYears);
             //Perform Calculation / Call the function
-            var fv1=save1(pv,int,nYears);
-            var fv2=save2(pv,int,nYears);
-            var fv3=save3(pv,int,nYears);
-            var fv4=save4(pv,int,nYears);
-            var fv5=save5(pv,int);
+            var fv1=account.save1();
+            var fv2=account.save2();
+            var fv3=account.save3();
+            var fv4=account.save4(pv, int, nYears);
+            var fv5=account.save5();
             var fv6={save:0};
-            save6(pv,int,nYears,fv6);
-            var fv7=save7(pv,int,nYears);
+            save6(fv6);
+            var fv7=account.save7();
 
             //Display the results
             document.write("<p>Present Value   = $"+pv+"</p>");
@@ -41,7 +42,7 @@
             document.write("<p>Future Value    = $"+fv4.toFixed(2)+"</p>");
             document.write("<p>Future Value    = $"+fv5.toFixed(2)+"</p>");
             document.write("<p>Future Value    = $"+fv6.save.toFixed(2)+"</p>");
-            display(fv7);	
+            account.display(fv7);	
         </script>
     </body>
 </html>

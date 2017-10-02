@@ -12,57 +12,65 @@
 
  */
 
-//Savings with a for-loop
-function save1(pv,int,n){
-    for(var year=1;year<=n;year++){
-        pv*=(1+int);
-    }
-    return pv;
+function Savings (pv, intr, n) {
+    this.pv = pv;
+    this.intr = intr;
+    this.n = n;  //n = number of years
 }
+
+//Savings with a for-loop
+Savings.prototype.save1 = function() {
+    var pval = this.pv;
+    for(var year=1;year<=this.n;year++){
+        pval*=(1+this.intr);
+    }
+    return pval;
+};
 
 //Savings with a power function
-function save2(pv,int,n){
-    return pv*Math.pow((1+int),n);
-}
+Savings.prototype.save2=function(){
+    return this.pv*Math.pow((1+this.intr),this.n);
+};
 
 //Savings with the exponential-log
-function save3(pv,int,n){
-    return pv*Math.exp(n*Math.log(1+int));
-}
+Savings.prototype.save3=function(){
+    return this.pv*Math.exp(this.n*Math.log(1+this.intr));
+};
 
 //Savings with recursion
-function save4(pv,int,n){
+Savings.prototype.save4=function(pv=this.pv, intr=this.intr, n=this.n){
     if(n<=0)return pv;
-    return save4(pv,int,n-1)*(1+int);
-}
+    return save4(pv,intr,n-1)*(1+intr);
+};
 
 //Savings with a defaulted parameter
-function save5(pv,int,n=12){
-    for(var year=1;year<=n;year++){
-        pv*=(1+int);
+Savings.prototype.save5=function(){
+    var pval=this.pval;
+    for(var year=1;year<=this.n;year++){
+        pval*=(1+this.intr);
     }
-    return pv;
-}
+    return pval;
+};
 
 //Savings with a reference object
-function save6(pv,int,n,fv){
-    fv.save=pv*Math.exp(n*Math.log(1+int));
-}
+Savings.prototype.save6=function(fv){
+    fv.save=this.pv*Math.exp(this.n*Math.log(1+this.intr));
+};
 
 //Savings with an array
-function save7(pv,int,n){
+Savings.prototype.save7=function(){
     //Declare an array
     var fv=new Array();
     //Calculate all the values in the array
-    fv[0]=pv;
-    for(var year=1;year<=n;year++){
-        fv[year]=fv[year-1]*(1+int);
+    fv[0]=this.pv;
+    for(var year=1;year<=this.n;year++){
+        fv[year]=fv[year-1]*(1+this.intr);
     }
     return fv;
-}
+};
 
 //Display the savings array
-function display(fv){
+Savings.prototype.display=function(fv){
     //Output the heading for our table
     document.write('<table width="200" border="1">');
     document.write("<tr><th>Years</th><th>Savings</th></tr>");
@@ -74,4 +82,5 @@ function display(fv){
         document.write("</tr>");
     }
     document.write("</table>");	
-}
+};
+
