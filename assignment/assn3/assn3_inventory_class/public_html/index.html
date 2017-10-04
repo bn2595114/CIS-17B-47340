@@ -4,13 +4,38 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="en">
     <head>
-        <title>TODO supply a title</title>
+        <title>Inventory Management Page</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="getForm.js"></script>
+        <script type="text/javascript" src="inventory_class.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Inventory Management</h1>
+        <h2>Add Item to inventory</h2>
+        <form action="index.html" method="get">
+            <input name="Product" type="text" />Product</br>
+            <input name="Inventory" type="text" />Inventory</br>
+            <input name="Price" type="text" />Price</br>
+            <input name="Submit" type="submit" />
+        </form>
+        
+        <h2>Display Inventory in Local Storage</h2>
+        <button onclick="inventory.reset()">Click me</button>
+        
+        <p id="invdisplay"></p>
+        
+        <script>
+            //Display inventory at end of page by running the script. Don't put in
+            //the <head> because you get errors as HTML runs top-down rather than the
+            //checking the whole program first (runs sequentially)
+            if (location.href.indexOf('?') > 0) {
+                inventory.addItem();
+            } else {
+                inventory.display();
+            }
+        </script>
+        
     </body>
 </html>
