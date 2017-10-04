@@ -5,21 +5,49 @@
 \margl1440\margr1440\vieww12180\viewh10840\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 JavaScript issues and questions\
+\f0\fs24 \cf0 Questions re: JSON lab directory\
 \
-1)  Why is everything a var? Why is everything var= \{ many lines of code \}\
+SO the FORM.HTML file comes first\'85 which then calls the getForm.html file. How do you link this? I see the \'93submit\'94 property name and type in the form section but how does it know to go to the getForm.html when you click this button? Why is there a getForm.html instead of doing everything in the getForm.js file?\
 \
-2)  How do you track down what comes first in the battleship example?\
+getForm.js \'85  All it does is to parse the data from the url in the address bar? \
 \
-3)  I can see that battleship.html button at bottom is the id=\'93fire button\'94\
+From getForm.js \'93info[1].split(\'93&\'94)\'94  what is \'93info\'94? Is it a built-in function in javascript?\
+	What does it do/entail? Split divides the strings at the ? in the URL. Everything before the ? is discarded? \
 \
-	a) How is that linked to the things in the HandlersInit.js file?\
-	b) How can you tell when a var is a function, array, variable, etc?\
-	c) What is getting passed to the handleKeyPress function? (is this a function?)\
-	d)    What is the value of e that is passed to the handleKeyPress?\
-	d) how does the function init() work?\
-	e) var guessInput = \'85.  is this the text from the form box when button clicked?\
-	f) var guess = guessInput.value.toUpperCase();  Is this running the text from guessInput through\
-		a built-in function (that converts it to upper case?)\
-	g) \
+info is created and passed the text from the URL divided into two parts separated at the ?.\
+	info[0] will contain the http\'85. up to the \'93?\'94\
+	info[1] will contain the end part after the \'93?\'94\
+	nameValuePairs is an array created from the data in info[1] and splits the data to create an array with an \
+		element for each occurrence of the \'93&\'94 symbol in the text\
+\
+How does javascript know to make these variables into arrays?	\
+\
+Is $_GET a built-in thing or is it created? is var $_GET = new Object assigning something to $_GET that already exists or is it creating a new thing called $_GET? Why the $? Isn\'92t that in PHP? What is Object? Is that defined somewhere else or is new Object built into javascript?\
+\
+\
+\
+\
+1)  getform.html\
+	var url=document.location.href;\
+\
+	What is document.location.href? How does the program know what this is? What is it referencing?\
+\
+2)  Why is there a getForm.html and form.html?\
+\
+3)  $_GET is a javascript built-in function\'85 How does \'93property in $_GET\'94 know how to parse this for the for \
+	loop? \
+\
+4) document.write refers to the current html page?\
+\
+5)  \'93(property+"="+decodeURIComponent($_GET[property])\'94 what is the property? What does it mean \
+	to use the \'93property\'94 function? How does it know which property to access? How does \
+	decodeURIComponent work? From how this is working $_GET is an array, so property is a numeric\
+	value? \
+\
+6)  JSON.stringify is a built-in function from JSON to convert the $_GET array into a string to fill the \
+	text object/variable? \
+\
+7)  What does JSON.parse do to the \'93text\'94 object that it is using to fill the \'93obj\'94 object?\
+\
+8)  This for loop is doing something to the \'93obj\'94 object. \
 }
